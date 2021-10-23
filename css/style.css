@@ -1,0 +1,166 @@
+:root {
+    --bgcolor1: hsl(32, 94%, 66%);
+    --bgcolor2: hsl(32, 88%, 83%);
+    --bgcolor3: hsl(32, 87%, 57%);
+
+    --headingStyle: "Festive", cursive;
+    --normalStyle: "IM Fell English SC", serif;
+    --subHeadingStyle: "Lobster", cursive;
+}
+/* ! ============ GENERAL ELEMENTS STYLES ============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(
+        to bottom right,
+        var(--bgcolor1),
+        var(--bgcolor2) 60%,
+        var(--bgcolor3)
+    );
+    height: 100vh;
+    width: 100%;
+}
+
+h1 {
+    font-family: var(--headingStyle);
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    font-size: clamp(30px, 10vw, 4rem);
+    text-align: center;
+    color: #e28413;
+}
+
+header {
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/pexels-pixabay-270637.jpg);
+    /* image credit: Photo by Pixabay from Pexels */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+hr {
+    height: 10px;
+    background: whitesmoke;
+}
+
+/* !============ CLASS STYLES ===========  */
+.btn {
+    padding: 5px;
+    background: #6ad5cb;
+    color: #048a81;
+    font-weight: bolder;
+    font-family: var(--subHeadingStyle);
+    text-transform: capitalize;
+    font-size: clamp(20px, 5vw, 1rem);
+    border-radius: 5px;
+    border: 3px solid #048a81;
+    transition: all 400ms linear;
+    width: 5.5rem;
+    height: 4rem;
+}
+
+.btn:hover {
+    box-shadow: 2px 4px 10px 1px black;
+}
+
+/* ! ========== SPECIFIC ELEMENT STYLES ============  */
+header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    color: #c3f73a;
+}
+#backdropSettings {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+}
+
+#livesLeft {
+    font-weight: bolder;
+    font-family: var(--normalStyle);
+    color: #646f4b;
+    text-transform: capitalize;
+}
+
+#mainDetails {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr;
+    text-align: center;
+    align-items: center;
+}
+
+#scoreSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: var(--normalStyle);
+    color: #886f68;
+    font-weight: bolder;
+}
+
+#word {
+    color: #1e1b18;
+    letter-spacing: 10px;
+    font-family: var(--normalStyle);
+}
+
+#nextWord {
+    width: max-content;
+    float: right;
+    margin: 1rem;
+}
+#nextWord[disabled] {
+    background: grey;
+}
+#nextWord[disabled]:hover {
+    box-shadow: none;
+}
+
+/* !============= MEDIA QUERY ================= */
+@media screen and (max-width: 640px) {
+    header h1 {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+    #mainDetails {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+    #again,
+    #nextWord {
+        position: absolute;
+        bottom: 15%;
+        left: 10%;
+    }
+    #nextWord {
+        left: 60%;
+        margin: 0;
+    }
+    #wordSection {
+        padding: 4rem 1rem;
+    }
+    #word {
+        margin: 2rem 0;
+    }
+}
