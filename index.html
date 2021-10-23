@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Word Guessing Game</title>
+
+    <!-- ================= LINKING OF GOOGLE FONTs ============== -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Festive&family=IM+Fell+English+SC&family=Lobster&display=swap');
+    </style>
+
+    <!-- ================= LINKING OF CSS FILE ============== -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ================= LINKING OF JAVA SCRIPT FILE ============== -->
+    <script src="js/hangman.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="backdropSettings">
+            <h1>word guess game!🤔</h1>
+        </div>
+    </header>
+    <hr>
+    <section id="mainDetails">
+        <button id="again" class="btn">again</button>
+        <div id="livesLeft">
+            <h2>Lives left : <span id="livesLeftSpan"></span></h2>
+        </div>
+        <section id="scoreSection">
+            <h2>Score: <span id="scoreSpan">0</span></h2>
+            <h2>High Score: <span id="highScoreSpan">0</span></h2>
+        </section>
+    </section>
+    <hr>
+    <section id="wordSection">
+        <h1>the word is</h1>
+        <h1 id="word"></h1>
+    </section>
+    <button id="nextWord" class="btn">next word</button>
+</body>
+
+</html>
